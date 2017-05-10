@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>style-broom</title>
+    <style>
+      @media {
+        .used-nested {
+          color: blue;
+        }
+
+        .unused {
+          color: pink;
+        }
+      }
+
+      @media screen {
+        .unused {
+          color: rebeccapurple;
+        }
+      }
+
+      .unused {
+        color: red;
+      }
+
+      .used-root {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="used-root">style-broom</p>
+    <p class="used-nested">style-broom</p>
+  </body>
+</html>
