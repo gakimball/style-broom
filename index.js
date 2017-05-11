@@ -55,7 +55,10 @@ module.exports = html => {
     // Actual rules will have a `selectors` property, whereas, say, a media query won't
     if (rule.selectors) {
       // Filter selectors by the ones that actually match an element in the HTML
-      rule.selectors = rule.selectors.filter(selector => {
+      rule.selectors = rule.selectors.filter(sel => {
+        // Filter out pseudo-selectors
+        const selector = sel.split(/\s+/).map(s => s.replace(/:.*/, '')).join(' ');
+
         return $(selector).length > 0;
       });
 
